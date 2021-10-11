@@ -1,0 +1,27 @@
+#include <iostream>
+int main()
+{
+    int n;//take size array from user
+    cout<<"Enter the size of the array"<<endl;
+    cin>>n;
+    int arr[n];//declare array with size from user
+    cout<<"Enter "<<n<<" elements"<<endl;
+    //loop for inserting array elements
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    //divisible by 5 and 3
+    for(int j=0;j<n;j++)
+    {
+        if(arr[j]%3==0&&arr[j]%5==0)
+        {
+            cout<<arr[j]<<" True"<<endl;
+        }
+        else
+        {
+            cout<<arr[j]<<" False"<<endl;
+        }
+    }
+    return 0;
+}
