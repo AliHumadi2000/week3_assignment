@@ -1,0 +1,40 @@
+#include<iostream>
+#define  n 10
+using namespace std;
+int main()
+{
+
+    int arr[n];//4 2 3 1 5
+    int first=0,last=n-1;//odd at first element in array ,odd at last
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    while(last>first)//first=1,last =2,2>1,last=1 ,first =1,1>1
+    {
+        if(arr[last]%2==0)//check if the last element is even
+        {
+            int temp;// swapping
+            temp=arr[last];//4
+            if(arr[first]%2!=0)//odd
+            {
+                arr[last]=arr[first];//
+                 arr[first]=temp;
+                 first++;//1
+                 last--;//2
+            }
+            else
+            {
+             first++;
+            }
+
+        }
+        else
+        {
+            last--;//last =3 last=1
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
