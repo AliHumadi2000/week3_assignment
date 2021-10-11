@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int A[n];
+    for(int i=0;i<n;i++)//1 2 3 4 5 34// 123 4545
+    {
+        int x;
+        cin>>x;
+        if(x>100)//n>100
+        {
+            A[i]=x;
+        }
+        else
+        {
+            cout<<"Re-enter an element >100"<<endl;
+            i--;
+        }
+    }
+    int temp,rem,sum;
+    for(int i=0;i<n;i++)
+    {
+        temp=A[i];
+        sum=0;
+        while(temp>0)
+        {
+            rem=temp%10;
+            sum=sum+rem;
+            temp=temp/10;
+        }
+        //cout<<"sum of "<<A[i]<<" =: "<<sum<<endl;
+        A[i]=sum;
+
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<A[i]<<"\t";
+    }
+}
